@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <title>Welcome to the quotes app</title>
+  </head>
+  <style>
+    *,
+    *::before,
+    *::after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 660px;
+      margin: 0 auto;
+      background-color: #f5f7dc;
+      color: #010001;
+      font-family: "PT Sans", sans-serif;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .welcome {
+      margin-top: 0.6em;
+      font-size: 1rem;
+    }
+
+    .quotes {
+      margin-top: 1.2em;
+    }
+
+    blockquote {
+      margin: 1.4em 0;
+      font-size: 1.1rem;
+    }
+
+    blockquote p {
+      margin: 0.2em 0;
+      color: #c7c7a6;
+    }
+  </style>
+  <body>
+    <h1>Quotes App Homepage</h1>
+    <p class="welcome">Welcome, Everybody</p>
+
+    <section class="quotes">
+      {% for post in all_author_quotes %}
+      <blockquote>
+        {{ post.quote }}
+        <p><em>{{ post.author }}</em></p>
+      </blockquote>
+      {% endfor %}
+    </section>
+  </body>
+</html>
